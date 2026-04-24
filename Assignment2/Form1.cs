@@ -13,12 +13,14 @@ namespace Assignment2
     public partial class Form1 : Form
     {
         HangmanGame game;
+        Player player;
         char[] progress;
         string usedLetters = "";
         Random rand = new Random();
         public Form1()
         {
             InitializeComponent();
+            player = new Player("Player");
             StartGame();
         }
         void StartGame()
@@ -40,6 +42,8 @@ namespace Assignment2
             labelWord.Text = string.Join(" ", progress);
             labelLives.Text = "Lives: " + game.Lives;
             labelUsed.Text = "Used Letters: ";
+
+            labelScore.Text = "Score: " + player.Score;
         }
 
     
@@ -56,7 +60,8 @@ namespace Assignment2
                 "Welcome to Hangman!\n\n" +
                 "Guess one letter at a time.\n" +
                 "Correct letters will appear in the word.\n" +
-                "Wrong guesses reduce your lives.\n"
+                "Wrong guesses reduce your lives.\n\n" +
+                "I chose Hangman because it is simple, fun, and uses word logic."
 
                 );
         }
@@ -110,6 +115,8 @@ namespace Assignment2
 
             if (labelWord.Text.Replace(" ", "") == game.Word)
             {
+                player.Score++;
+                labelScore.Text = "Score: " + player.Score;
                 MessageBox.Show("You win!");
                 StartGame();
             }

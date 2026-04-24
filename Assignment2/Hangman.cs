@@ -15,7 +15,7 @@ namespace Assignment2
             get { return word; }
             set
             {
-                word = value.ToLower();   // string function #1
+                word = value.ToLower();
             }
         }
 

@@ -35,6 +35,7 @@
             this.buttonNewGame = new System.Windows.Forms.Button();
             this.labelWord = new System.Windows.Forms.Label();
             this.labelLives = new System.Windows.Forms.Label();
+            this.labelScore = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelUsed
@@ -101,11 +102,21 @@
             this.labelLives.TabIndex = 9;
             this.labelLives.Text = "Lives: 6";
             // 
+            // labelScore
+            // 
+            this.labelScore.AutoSize = true;
+            this.labelScore.Location = new System.Drawing.Point(1506, 444);
+            this.labelScore.Name = "labelScore";
+            this.labelScore.Size = new System.Drawing.Size(92, 25);
+            this.labelScore.TabIndex = 11;
+            this.labelScore.Text = "Score: 0";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1993, 1036);
+            this.Controls.Add(this.labelScore);
             this.Controls.Add(this.labelLives);
             this.Controls.Add(this.labelWord);
             this.Controls.Add(this.buttonNewGame);
@@ -128,6 +139,7 @@
         private System.Windows.Forms.Button buttonNewGame;
         private System.Windows.Forms.Label labelWord;
         private System.Windows.Forms.Label labelLives;
+        private System.Windows.Forms.Label labelScore;
     }
 }
 
