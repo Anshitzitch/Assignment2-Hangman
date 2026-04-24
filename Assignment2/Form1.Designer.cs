@@ -61,7 +61,7 @@
             this.buttonGuess.TabIndex = 4;
             this.buttonGuess.Text = "Guess";
             this.buttonGuess.UseVisualStyleBackColor = true;
-  
+            this.buttonGuess.Click += new System.EventHandler(this.buttonGuess_Click);
             // 
             // buttonInstructions
             // 
@@ -71,7 +71,7 @@
             this.buttonInstructions.TabIndex = 6;
             this.buttonInstructions.Text = "Instructions";
             this.buttonInstructions.UseVisualStyleBackColor = true;
-            
+            this.buttonInstructions.Click += new System.EventHandler(this.buttonInstructions_Click);
             // 
             // buttonNewGame
             // 
@@ -81,7 +81,7 @@
             this.buttonNewGame.TabIndex = 7;
             this.buttonNewGame.Text = "New Game";
             this.buttonNewGame.UseVisualStyleBackColor = true;
-            
+            this.buttonNewGame.Click += new System.EventHandler(this.buttonNewGame_Click);
             // 
             // labelWord
             // 

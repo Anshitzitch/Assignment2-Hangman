@@ -42,20 +42,40 @@ namespace Assignment2
             labelUsed.Text = "Used Letters: ";
         }
 
+    
+        private void buttonNewGame_Click(object sender, EventArgs e)
+        {
+            StartGame();
+        }
+
+        private void buttonInstructions_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show
+                (
+
+                "Welcome to Hangman!\n\n" +
+                "Guess one letter at a time.\n" +
+                "Correct letters will appear in the word.\n" +
+                "Wrong guesses reduce your lives.\n"
+
+                );
+        }
+
         private void buttonGuess_Click(object sender, EventArgs e)
         {
             string guessText = textBoxGuess.Text.ToLower();
 
             // Make sure the user only enters one letter
+
             if (guessText.Length != 1)
             {
                 MessageBox.Show("Please enter one letter.");
                 return;
             }
-
             char guess = guessText[0];
 
             // Stop the same letter from being guessed twice
+
             if (usedLetters.Contains(guess.ToString()))
             {
                 MessageBox.Show("You already guessed that letter.");
@@ -65,10 +85,10 @@ namespace Assignment2
 
             usedLetters += guess + " ";
             labelUsed.Text = "Used Letters: " + usedLetters;
-
             bool found = false;
 
             // Check if the guessed letter is in the word
+
             for (int i = 0; i < game.Word.Length; i++)
             {
                 if (game.Word[i] == guess)
@@ -87,6 +107,7 @@ namespace Assignment2
             labelLives.Text = "Lives: " + game.Lives;
 
             // Check if the player won
+
             if (labelWord.Text.Replace(" ", "") == game.Word)
             {
                 MessageBox.Show("You win!");
@@ -97,9 +118,7 @@ namespace Assignment2
                 MessageBox.Show("You lose! The word was: " + game.Word);
                 StartGame();
             }
-
             textBoxGuess.Text = "";
         }
-
     }
 }
