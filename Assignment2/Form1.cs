@@ -25,7 +25,7 @@ namespace Assignment2
         }
         void StartGame()
         {
-            string[] words = { "apple", "computer", "kingston" };
+            string[] words = { "apple", "computer", "kingston", "watch" };
 
             int index = rand.Next(0, words.Length);
             game = new HangmanGame(words[index]);
